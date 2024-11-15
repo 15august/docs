@@ -22,30 +22,19 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
+    "name": "Go to Gym",
     "url": "https://buildergym.xyz"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Community X",
+      "icon": "x-twitter",
+      "url": "https://x.com/builderGymWeb3"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Telegram Chat",
+      "icon": "telegram",
+      "url": "https://t.me/BuilderGymLobby"
     }
   ],
   "navigation": [
@@ -53,12 +42,29 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "whitepaper"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Tokenomics",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Roadmap",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "User Tutorials",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Company Account",
       "pages": [
         "essentials/markdown",
         "essentials/code",
@@ -67,25 +73,9 @@
         "essentials/navigation",
         "essentials/reusable-snippets"
       ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "x": "https://x.com/builderGymWeb3"
   }
 }
