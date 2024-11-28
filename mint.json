@@ -46,6 +46,12 @@
       ]
     },
     {
+      "group": "Quests",
+      "pages": [
+        "quests/intro"
+      ]
+    },
+    {
       "group": "Tokenomics",
       "pages": [
         "api-reference/introduction"
