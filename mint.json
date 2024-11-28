@@ -48,7 +48,8 @@
     {
       "group": "Quests",
       "pages": [
-        "quests/intro"
+        "quests/intro",
+        "quests/create"
       ]
     },
     {
