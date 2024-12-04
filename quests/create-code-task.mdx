@@ -1,0 +1,90 @@
+---
+title: 'How to Add a Code Task on BuilderGym'
+description: 'Adding coding task via Github.'
+---
+
+Code tasks provide users with programming challenges directly in an integrated development environment (IDE). Follow the steps below to create and configure a Code Task.
+
+**Step 1: Navigate to Code Tasks**
+
+1. Go to [https://admin.buildergym.xyz/code-tasks.](https://admin.buildergym.xyz/code-tasks.)
+
+2. You’ll see a list of existing Code Tasks (if any). To create a new one, click the **“Add**
+   **Coding Task”** button.
+
+**Step 2: Fill in the Code Task Details**
+
+1. **Name**:
+
+   * Enter a name for the coding task.
+
+   * This name will appear in the **Task Type** dropdown menu when you create a **Task**
+     **Message**.
+
+2. **Description**:
+
+   * Write the challenge description in **Markdown** format.
+
+   * This will be displayed to the user when they start the task.
+     Example:
+     &#x20;    \### Deploy Your First Smart Contract
+     &#x20;    Write a Solidity smart contract that implements a simple wallet
+     &#x20;    with a \`deposit\` and \`withdraw\` function.
+
+3. **Hint**:
+
+   * Add a hint in **Markdown** format.
+
+   * This will be visible when the user clicks the **“Hint”** button in the IDE.
+     Example:
+     &#x20;    Check out Solidity’s documentation on \[function
+     &#x20;    modifiers]\(https://docs.soliditylang.org) to secure your
+     &#x20;    contract.
+
+4. **Language**(Currently inactive):
+
+   1. Choose the programming language. This has no effect on functionality for now, but can be updated later.
+
+**Step 3: Load Content**
+There are two key files to upload, both linked to files in a **GitHub repository**:
+
+1. **TaskContent**(Required):
+
+   * Provide a GitHub URL to the starter content.
+
+   * This content will load into the user's workspace the first time they open the task.
+
+   * Example: A skeleton smart contract or starter code.
+
+2. **ShowAnswerContent**(Required):
+
+   * Provide a GitHub URL to the solution file.
+
+   * If the user clicks **“Show Answer”**, this content will replace the task content in
+     their IDE.
+
+   * Example: A completed and correct version of the contract or code.
+     Also your repo should contain /test folder with unit-tests, it is required, but the tests themselves may be empty. Example test code:
+
+```solidity
+// SPDX-License-Identifier: UNLICENSED pragma solidity ^0.8.13;
+import "remix\_tests.sol";
+contract AttackerTest \{
+
+  function beforeAll() public \{ // nothing to do here}
+}
+
+**Step 4: Save the Code Task**
+```
+
+1\. Double-check all fields to ensure accuracy.
+2\. Click **“Save”** to add the Code Task to the system.
+
+**How to Link a Code Task to a Task Message**
+
+1. When creating a **Task Message**, you’ll see a dropdown for **Task Type**.
+
+2. Select the Code Task you created earlier from the dropdown.
+
+3. Configure other task settings (e.g., completion points, additional checks)
+   as needed.

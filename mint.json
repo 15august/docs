@@ -49,7 +49,9 @@
       "group": "Quests",
       "pages": [
         "quests/intro",
-        "quests/create"
+        "quests/create",
+        "quests/messages",
+        "quests/create-code-task"
       ]
     },
     {
