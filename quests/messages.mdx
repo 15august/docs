@@ -1,11 +1,9 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "What Are Messages? What types messages exists?"
+description: "Learn how to build blocks of the quest/course"
 ---
 
-## **What Are Messages?**
-
-A **message** is the smallest blocks of content within a quest. Messages can contains:
+#### A **message** is the smallest blocks of content within a quest. Messages can contains:
 
 * Instructions(e.g Markdown blocks)
 
@@ -27,7 +25,8 @@ You can mix and match message types to create an engaging and dynamic user exper
 
 Messages are the foundational elements of quests. Each message type serves a specific purpose, enabling you to design interactive and engaging experiences for users. Below are the key message types and how to configure them:
 
-**1. Dialogue**
+## **1. Dialogue**
+
 Dialogue messages are typically used to simulate communication between the user and a persona, such as **Vitalik**. These messages create a conversational and immersive experience.
 **Steps to Create a Dialogue Message:**
 
@@ -45,7 +44,10 @@ Dialogue messages are typically used to simulate communication between the user 
 
    1. Compose the dialogue text as if it were coming from the meta user.
 
-**2. Deploy Contract**
+![](https://copper-useful-tyrannosaurus-882.mypinata.cloud/ipfs/bafybeietwit2svqavs3lfjq6rtngudp53dvqzylptadeayxwwtttlip2d4/image%2016.png)
+![](https://copper-useful-tyrannosaurus-882.mypinata.cloud/ipfs/bafybeietwit2svqavs3lfjq6rtngudp53dvqzylptadeayxwwtttlip2d4/image%2017.png)
+
+## **2. Deploy Contract**
 
 This message type allows users to deploy a custom Solidity smart contract. It adds interactivity by letting each user deploy a contract tailored to their quest experience.
 
@@ -69,10 +71,9 @@ This message type allows users to deploy a custom Solidity smart contract. It ad
 
    * Each user gets their own instance of the contract deployed for them.
 
-**3. Task**
+## **3. Task**
 
-The **Task Message** is the core message type, representing an actionable challenge for the user
-to complete.
+The **Task Message** is the core message type, representing an actionable challenge for the user to complete.
 
 **Steps to Create a Task Message**
 
@@ -80,11 +81,11 @@ to complete.
 
    1. Define the number of points a user earns for completing the task.
 
-2. 2\. **Assign a Code Task:**
+2. **Assign a Code Task:**
 
    1. Link the task to a **Code Task** (explained later).
 
-3. 3\. **Add Additional Checks (Optional):**
+3. **Add Additional Checks (Optional):**
 
    1. If you need custom logic to validate user input, enable **"Need additional checks?"**:
 
@@ -95,13 +96,17 @@ to complete.
       2. **Additional Check Code:** Write a TypeScript function to verify the user's
          solution.
 
-**Data Available in Check Code:**
+![](https://copper-useful-tyrannosaurus-882.mypinata.cloud/ipfs/bafybeietwit2svqavs3lfjq6rtngudp53dvqzylptadeayxwwtttlip2d4/image%2019.png)
 
-* **jsonData.userMetaMaskAddress:**&#x55;ser'sMetaMaskwalletaddress.
+**Data Available in Check Code(you have jsonData object, that BuilderGym gives you to work):**
 
-* **jsonData.contract:**&#x41;ddressofthecontractdeployedfortheuser.
+* `jsonData.userMetaMaskAddress`: User's MetaMask wallet address.
 
-* **jsonData.userData:**&#x55;ser'sinputfromthe"Checktheanswer"field. Libraries available for use - Ethers and Axios (soon planning to add web3.js and viem.sh)
+* `jsonData.contract`: address of thecontract deployed for theuser by BuilderGym.
+
+* `jsonData.userData`: User's input from the "Checktheanswer" field.
+
+* Libraries available for use - `Ethers` and `Axios` (soon planning to add `web3.js` and `viem.sh`)
 
 **Check Code Functionality:**
 
@@ -121,3 +126,13 @@ to complete.
 ```
 
 You should add `()` to the function’s end to ensure it is being called. This given example checks the deployed contract’s balance and returns true if it is 0.
+
+
+
+**General Tips for Using Messages**
+
+1. **Combine Messages Effectively:** Use dialogue messages to introduce tasks and guide users, deploy contract messages to set up challenges, and task messages to evaluate their progress.
+
+2. **Leverage Meta Users:** Adding personas like Vitalik makes the experience more engaging and relatable.
+
+3. **Test Thoroughly:** Ensure Solidity code, additional checks, and validations work as intended before publishing the quest.
