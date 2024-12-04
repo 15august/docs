@@ -1,0 +1,123 @@
+---
+title: 'New file'
+description: 'Description of your new file.'
+---
+
+## **What Are Messages?**
+
+A **message** is the smallest blocks of content within a quest. Messages can contains:
+
+* Instructions(e.g Markdown blocks)
+
+* Questions
+
+* Media (images/videos)
+
+* Validation criteria
+
+* Interactive quizzes&#x20;
+
+* Coding tasks
+
+* etc
+
+You can mix and match message types to create an engaging and dynamic user experience. You can build any storytelling to make more engaging content.
+
+## **Message Types on BuilderGym**
+
+Messages are the foundational elements of quests. Each message type serves a specific purpose, enabling you to design interactive and engaging experiences for users. Below are the key message types and how to configure them:
+
+**1. Dialogue**
+Dialogue messages are typically used to simulate communication between the user and a persona, such as **Vitalik**. These messages create a conversational and immersive experience.
+**Steps to Create a Dialogue Message:**
+
+1. **Add a Meta User:**
+
+   1. Goto: https://admin.buildergym.xyz/courses/**\[course-id]**/users-meta
+
+   2. Add a new meta user. This meta user will act as the "author" of the dialogue messages (e.g., Vitalik).
+
+2. **Link the Meta User to Your Quest:**
+
+   1. Select the meta user in your quest editor.
+
+3. **Add the Dialogue Message:**
+
+   1. Compose the dialogue text as if it were coming from the meta user.
+
+**2. Deploy Contract**
+
+This message type allows users to deploy a custom Solidity smart contract. It adds interactivity by letting each user deploy a contract tailored to their quest experience.
+
+**Steps to Create a Deploy Contract Message:**
+
+1. **Provide Solidity Code:**
+
+   1. Paste the Solidity code into the provided field.
+
+2. **Configure Contract Deployment:**
+
+   * Add an initial balance (must be less or equal than **0.001 ETH**). Ensure the code is valid
+     and contains a **`transfer() `**&#x66;unction.
+
+   * Select the network where the contract will be deployed.
+
+3. **System Behavior:**
+
+   * The platform will compile the Solidity code into bytecode and ABI, then store it in
+     the database.
+
+   * Each user gets their own instance of the contract deployed for them.
+
+**3. Task**
+
+The **Task Message** is the core message type, representing an actionable challenge for the user
+to complete.
+
+**Steps to Create a Task Message**
+
+1. **Set Completion Rewarding Points:**
+
+   1. Define the number of points a user earns for completing the task.
+
+2. 2\. **Assign a Code Task:**
+
+   1. Link the task to a **Code Task** (explained later).
+
+3. 3\. **Add Additional Checks (Optional):**
+
+   1. If you need custom logic to validate user input, enable **"Need additional checks?"**:
+
+      1. **Additional Check Message ID:** Enter the ID of a related **Deploy**
+         **Contract** message. This ID links the task to the deployed contract,
+         enabling custom validations.
+
+      2. **Additional Check Code:** Write a TypeScript function to verify the user's
+         solution.
+
+**Data Available in Check Code:**
+
+* **jsonData.userMetaMaskAddress:**&#x55;ser'sMetaMaskwalletaddress.
+
+* **jsonData.contract:**&#x41;ddressofthecontractdeployedfortheuser.
+
+* **jsonData.userData:**&#x55;ser'sinputfromthe"Checktheanswer"field. Libraries available for use - Ethers and Axios (soon planning to add web3.js and viem.sh)
+
+**Check Code Functionality:**
+
+1. The code is executed when the user clicks **"Check the answer"**.
+
+2. Use the provided data to validate user actions, such as checking contract interactions or submitted values.
+
+3. The functions should return \{result: boolean, message:string}, message will be shown to the user if the result is false.
+
+**Example Use Case:**
+
+```javascript
+(async () => \{
+  const balance = await provider.getBalance(jsonData.contract);
+  return \{result: balance.toNumber() == 0, message: 'This contract still have some funds on it'}; // true if balance is 0
+})();
+```
+
+You should add `()` to the function’s end to ensure it is being called. This given example checks the deployed contract’s balance and returns true if it is 0.
